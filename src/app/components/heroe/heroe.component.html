@@ -1,0 +1,25 @@
+<div class="card mb-3" style="max-width: 100%;">
+    <div class="row no-gutters animated fadeIn">
+        <div class="col-md-4 p-2">
+            <img [src]="heroe.img" class="card-img" [alt]="heroe.nombre">
+            <br>
+            <br>
+            <button type="button" class="btn btn-block btn-outline-info" [routerLink]="['/heroes']"> Ver mas
+                heroes</button>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{heroe.nombre | uppercase}}</h5>
+                <p class="card-text">{{heroe.bio}}</p>
+                <p class="card-text" style="display: inline;"><small class="text-muted"> <b>Aparicion: </b>({{heroe.aparicion | date: 'y'}})</small></p>
+
+                <img *ngIf="heroe.casa === 'Marvel'" src="assets/img/marvel-logo.png" width="80" 
+                    [alt]="heroe.casa" style="display: inline; margin-left: 50%;">
+
+                <img *ngIf="heroe.casa === 'DC'" src="assets/img/dc-logo.png" width="50"  [alt]="heroe.casa"
+                    style="display: inline; margin-left: 50%;">
+
+            </div>
+        </div>
+    </div>
+</div>

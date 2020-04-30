@@ -1,0 +1,14 @@
+<h1>Buscando: <small>{{termino}}</small></h1>
+<hr>
+<div *ngIf="heroesBuscados.length<1" class="row animated fadeIn fast">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No se encontraron resultados para: {{termino}}
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <!-- *ngFor="let item of heroesBuscados; let i = index" -->
+  <app-heroe-tarjeta [heroe]="item" [index]="item.idx" *ngFor="let item of heroesBuscados"></app-heroe-tarjeta>
+</div>
